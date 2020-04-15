@@ -1,6 +1,15 @@
 <p align="center">
  <img height=300 src="FunMirrorsLogo.png">
 </p>
+
+## Content
+* About the project
+* Fun results
+* Theory
+* Installation and Usage
+* Creating your own mirrors
+
+## About the project
 I developed this fun project as an application of the following concepts:
 
 * Camera projection matrix
@@ -12,6 +21,7 @@ A detailed explaination the above fundamental concepts can be found at [this blo
 
 I will explain the basics of above topics first and then I will explain how I combined all the concepts together.Before that let's have a look at some fun results!!
 
+## Fun Results
 |![](/gifs/mirror1.gif)|![](/gifs/mirror2.gif)|
 |--|--|
 |![](/gifs/mirror3.gif)|![](/gifs/mirror4.gif)|
@@ -19,11 +29,13 @@ I will explain the basics of above topics first and then I will explain how I co
 |![](/gifs/mirror5.gif)|![](/gifs/mirror6.gif)|
 |--|--|
 
-The implimentation of virtual camera tha I am using is explained in [this repository](https://github.com/kaustubh-sadekar/VirtualCam) It explains how you can change different camera parameters to generate various effects. These two projects aim towards motivating computer vision enthusiasts to study fundamenta concepts related to image formation and camera projection.
+The implimentation of virtual camera that I am using is explained in [this repository](https://github.com/kaustubh-sadekar/VirtualCam) It explains how you can change different camera parameters to generate various effects. These two projects aim towards motivating computer vision enthusiasts to study fundamenta concepts related to image formation and camera projection.
  
 ### [Virtual camera class](https://github.com/kaustubh-sadekar/VirtualCam) is used to create all the different types of mirrors. The virtual camera repository also contains a GUI which helps you to modify all the camera parameters and visually understand effect of each parameter on the final generated image.
 
-## Understanding camera projection matrix
+## Theory
+
+### Understanding camera projection matrix
 Camera projection matrix (P) provides a mapping between a 3D world coordinate and its corresponding pixel coordinate in an image captured by the respective camera. It is dependent on **intrinsic** and **extrinsic** parameters of a camera.
 
 **Intrinsic camera parameters**:
@@ -45,13 +57,13 @@ Derivation of the camera projection matrix is explained in the following image.
   <img width="550" src="/theory2.png">
 </p>
 
-## Creating mirror surfaces using numpy
+### Creating mirror surfaces using numpy
 I have used np.meshgrid to create the entire plane surface in 3D. Some of the planes used are shown below
 Mirror using a gaussian function           |  Inverted mirror using an inverted gaussian function  
 :-------------------------:|:-------------------------:
 ![](/Mirror1.png)  |  ![](/Mirror2.png)
 
-## Projecting these surfaces using the camera projection matrix
+### Projecting these surfaces using the camera projection matrix
 Now as explained in the camera projection matrix section we can use the projection matrix to project any 3D point in the image. Using numpy functions and concepts of matrix multiplication we apply the projection matrix to the entire 3D surface. 
 
 Mirror using a gaussian function           |  Projection of the grid in virtual camera  
@@ -59,11 +71,11 @@ Mirror using a gaussian function           |  Projection of the grid in virtual 
 ![](/Mirror1.png)  |  ![](/mesh_projection.png) 
 
 
-## Image remapping
+### Image remapping
 In image remapping we basically try to change the pixel location. Using mappings U and V we get the new location of x and y coordinates for a given pixel, originally at (x,y) location. Thus we get x_new = U(x,y) and y_new = V(x,y). OpenCV provides a very easy to use method, `remap`. We need to pass the image, and the x and y map i.e. U and V respectively in the above definition. The function basically returns output such that the pixel values at (x,y) in the original image are mapped to (x_new,y_new). This is called forward mapping. To avoid holes we find the inverse mapping such that (x,y) in the original image is determined as `x,y = U_inv(x_new,y_new) , V_inv(x_new,y_new)`.
 
 
-## Using the projection of the plane as a remapping function and apply remapping the the image to generate different effects
+### Using the projection of the plane as a remapping function and apply remapping the the image to generate different effects
 Now we know all the building blocks of this project :
 * How to create a virtual camera using numpy and concepts of camera projection
 * How to create a 3D plane to be used as out mirror
@@ -76,11 +88,19 @@ Mirror using a gaussian function           |  Projection of the grid in virtual 
 ![](/Mirror1.png)  |  ![](/mesh_projection.png)   | ![](/image_output.png)
 
 
-## Usage
+## Installation and Usage
+First you need to install the **vcam** module using pip. You can also download it from the [source](https://github.com/kaustubh-sadekar/VirtualCam)
+
+Install the vcam module using the following command:
+```shell
+pip3 install vcam`
+```
 To run the example code use the following command :
 ```shell
-python3 Example1.py`
+python3 Example1.py <PATH_TO_INPUT_FILE> <MIRROR_NUMBER>`
 ```
- 
+
+## Creating your own mirrors
+
 
 
