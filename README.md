@@ -22,12 +22,34 @@ A detailed explaination the above fundamental concepts can be found at [this blo
 I will explain the basics of above topics first and then I will explain how I combined all the concepts together.Before that let's have a look at some fun results!!
 
 ## Fun Results
-|![](/gifs/mirror1.gif)|![](/gifs/mirror2.gif)|
-|--|--|
-|![](/gifs/mirror3.gif)|![](/gifs/mirror4.gif)|
-|--|--|
-|![](/gifs/mirror5.gif)|![](/gifs/mirror6.gif)|
-|--|--|
+<p align="center">
+ <img src="/gifs/M3a.gif">
+</p>
+<p align="center">
+ Input and output of Babyfy mirror
+</p>
+
+<p align="center">
+ <img src="/gifs/M1a.gif">
+</p>
+<p align="center">
+ Input and output of HulkMode mirror
+</p>
+
+<p align="center">
+ <img src="/gifs/M2a.gif">
+</p>
+<p align="center">
+ Input and output of Squeezoo mirror
+</p>
+
+<p align="center">
+ <img src="/gifs/M4b.gif">
+</p>
+<p align="center">
+ Input and output of Strectchee mirror
+</p>
+
 
 The implimentation of virtual camera that I am using is explained in [this repository](https://github.com/kaustubh-sadekar/VirtualCam) It explains how you can change different camera parameters to generate various effects. These two projects aim towards motivating computer vision enthusiasts to study fundamenta concepts related to image formation and camera projection.
  
