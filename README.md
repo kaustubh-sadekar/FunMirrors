@@ -2,6 +2,7 @@
  <img height=300 src="FunMirrorsLogo.png">
 </p>
 I developed this fun project as an application of the following concepts:
+
 * Camera projection matrix
 * Camera intrinsic and extrinsic parameters
 * Image remapping
