@@ -1,6 +1,4 @@
 # FunMirrors
-This is a fun project I created to motivate computer vision enthusiasts and to highlight the importance of understanding fundamental concepts related to image formation in a camera.
-
 I developed this fun project as an application of the following concepts:
 * Camera projection matrix
 * Camera intrinsic and extrinsic parameters
