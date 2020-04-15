@@ -23,7 +23,7 @@ I will explain the basics of above topics first and then I will explain how I co
 
 ## Fun Results
 <p align="center">
- <img src="/gifs/M3a.gif">
+ <img src="/gifs/M3b.gif">
 </p>
 <p align="center">
  Input and output of Babyfy mirror
