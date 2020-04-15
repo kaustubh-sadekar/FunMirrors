@@ -119,10 +119,41 @@ pip3 install vcam`
 ```
 To run the example code use the following command :
 ```shell
-python3 Example1.py <PATH_TO_INPUT_FILE> <MIRROR_NUMBER>`
+python3 Example1.py`
 ```
 
 ## Creating your own mirrors
+Creating your own mirrors and have some fun effects is very easy using the vcam module. Refer [Example1.py](Example1.py) to get a better idea of writing the full code. You need to create your own class defining your mirror. This class should inherit the `meshGen` class from vcam module. Here is a simple example where I am trying to generate a surface with a sine wave effect. 
+I want my Z coorinate of the mirror surface to vary in form of a sine function on x, hence I want z = epsilon*sin(Kx).
 
+* Define the function Z = F(x,y) or F(x) or F(y) in self.defineMirror method.
+* Pass the same parameters to getter method `getMirror` and call the `defineMirror` method to apply the change.
+* Store the mesh returned by the `getMirror` method and pass it the the defined virtual camera.
+
+```python
+class myMirror(meshGen):
+
+	def __init__(self,H,W):
+		super(myMirror, self).__init__(H,W)
+
+	def defineMirror(self,epsilon):
+
+		self.Z += epsilon*np.sin((self.X/self.W)*2*np.pi*10)
+
+	def getMirror(self,epsilon):
+		self.defineMirror(epsilon)
+
+		return self.getPlane()
+
+# Creating the mirror object
+mirror = myMirror(H,W)
+# Getting the mirror surface
+src = mirror.getMirror(5)
+```
+
+**output**
+<p align="center">
+ <img src="/gifs/mirror5.gif">
+</p>
 
 
