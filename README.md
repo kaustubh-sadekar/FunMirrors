@@ -31,7 +31,7 @@ I will explain the basics of above topics first and then I will explain how I co
 
 The implimentation of virtual camera that I am using is explained in [this repository](https://github.com/kaustubh-sadekar/VirtualCam) It explains how you can change different camera parameters to generate various effects. These two projects aim towards motivating computer vision enthusiasts to study fundamenta concepts related to image formation and camera projection.
  
-### [Virtual camera class](https://github.com/kaustubh-sadekar/VirtualCam) is used to create all the different types of mirrors. The virtual camera repository also contains a GUI which helps you to modify all the camera parameters and visually understand effect of each parameter on the final generated image.
+##### [Virtual camera class](https://github.com/kaustubh-sadekar/VirtualCam) is used to create all the different types of mirrors. The virtual camera repository also contains a GUI which helps you to modify all the camera parameters and visually understand effect of each parameter on the final generated image.
 
 ## Theory
 
