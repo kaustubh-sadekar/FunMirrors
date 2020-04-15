@@ -1,5 +1,5 @@
 <p align="center">
- <img height=450 src="FunMirrorsLogo.png">
+ <img height=300 src="FunMirrorsLogo.png">
 </p>
 I developed this fun project as an application of the following concepts:
 * Camera projection matrix
