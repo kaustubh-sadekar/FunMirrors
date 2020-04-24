@@ -124,7 +124,7 @@ python3 Example1.py`
 ```
 
 ## Creating your own mirrors
-Creating your own mirrors and generating some fun effects is very easy using the vcam module. Refer [Example1.py](Example1.py) to get a better idea of writing the full code. Creating your own mirror has three major steps:
+Creating your own mirrors and generating some fun effects is very easy using the vcam module. Refer [Example1.py](Example1.py) to get a better idea of writing the full code. To apply FunMirrors on video refer to [Example2.py](Example2.py). Creating your own mirror has three major steps:
 
 * Create the virtual camera object and surface object.
 * Change the value of plane.Z using some function of X and Y.
