@@ -3,94 +3,26 @@ import numpy as np
 import math
 from vcam import vcam,meshGen
 
-
-"""
-# Uncomment for a different fun effect
-class myMirror(meshGen):
-
-	def __init__(self,H,W):
-		super(myMirror, self).__init__(H,W)
-
-	def defineMirror(self,epsilon,sigma,axis=0):
-
-		if not axis:
-			self.Z += epsilon*np.exp(-0.5*((self.X*1.0/self.W)/sigma)**2)/(sigma*np.sqrt(2*np.pi))
-		elif axis == 1:
-			self.Z += epsilon*np.exp(-0.5*((self.Y*1.0/self.H)/sigma)**2)/(sigma*np.sqrt(2*np.pi))
-		else:
-			print("Wrong axis")
-			exit(-1)
-
-	def getMirror(self,epsilon,sigma,axis=0):
-		self.defineMirror(epsilon,sigma,axis)
-
-		return self.getPlane()
-"""
-
-"""
-# Uncomment for fun mirror effect
-class myMirror(meshGen):
-
-	def __init__(self,H,W):
-		super(myMirror, self).__init__(H,W)
-
-	def defineMirror(self,epsilon,sigma,axis=0):
-
-		if not axis:
-			self.Z -= epsilon*np.exp(-0.5*((self.X*1.0/self.W)/sigma)**2)/(sigma*np.sqrt(2*np.pi))
-		elif axis == 1:
-			self.Z -= epsilon*np.exp(-0.5*((self.Y*1.0/self.H)/sigma)**2)/(sigma*np.sqrt(2*np.pi))
-		else:
-			print("Wrong axis")
-			exit(-1)
-
-	def getMirror(self,epsilon,sigma,axis=0):
-		self.defineMirror(epsilon,sigma,axis)
-
-		return self.getPlane()
-"""
-
-# """
-# Uncomment for sine wave type mirror
-class myMirror(meshGen):
-
-	def __init__(self,H,W):
-		super(myMirror, self).__init__(H,W)
-
-	def defineMirror(self,epsilon):
-
-		self.Z += epsilon*np.sin((self.X/self.W)*2*np.pi*10)
-
-	def getMirror(self,epsilon):
-		self.defineMirror(epsilon)
-
-		return self.getPlane()
-# """
-
-
-cap = cv2.VideoCapture("Video3.mp4")
-ret, img = cap.read()
-
+# Reading the input image. Pass the path of image you would like to use as input image.
+img = cv2.imread("chess.png")
 H,W = img.shape[:2]
-fps = 30
-filename = "sine.mp4"
 
-fourcc=cv2.VideoWriter_fourcc(*'XVID')
-out=cv2.VideoWriter(filename,fourcc,fps,(W,H))
-
+# Creating the virtual camera object
 c1 = vcam(H=H,W=W)
-mirror = myMirror(H,W)
-src = mirror.getMirror(5)
 
+# Creating the surface object
+plane = meshGen(H,W)
 
-ret, img = cap.read()
+# We generate a mirror where for each 3D point, its Z coordinate is defined as Z = 20*exp^((x/w)^2 / 2*0.1*sqrt(2*pi))
 
-while 1:
-	ret, img = cap.read()
-	output = c1.applyMesh(img,src)
-	output = cv2.flip(output,1)
-	out1 = np.hstack((img,output))
-	cv2.imshow("output",out1)
-	out.write(out1)
-	if cv2.waitKey(1)&0xFF == 27:
-		break
+plane.Z += 20*np.exp(-0.5*((plane.X*1.0/plane.W)/0.1)**2)/(0.1*np.sqrt(2*np.pi))
+pts3d = plane.getPlane()
+
+pts2d = c1.project(pts3d)
+map_x,map_y = c1.getMaps(pts2d)
+
+output = cv2.remap(img,map_x,map_y,interpolation=cv2.INTER_LINEAR)
+
+cv2.imshow("Funny Mirror",output)
+cv2.imshow("Input and output",np.hstack((img,output)))
+cv2.waitKey(0)
