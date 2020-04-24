@@ -206,7 +206,7 @@ plane.Z -= 100*np.sqrt((plane.X*1.0/plane.W)**2+(plane.Y*1.0/plane.H)**2)
 | **Mirror 1** |
 | :------------------: |
 |![](/Challenge-Mirrors/Challenge-effect-1-image-1.jpg)|
-|![](/output_samples/Challenge-effect-1-image-3.jpg)|
+|![](/Challenge-Mirrors/Challenge-effect-1-image-3.jpg)|
 
 Solution
 ```python
@@ -216,7 +216,7 @@ Solution
 | **Mirror 2** |
 | :------------------: |
 |![](/Challenge-Mirrors/Challenge-effect-2-image-1.jpg)|
-|![](/output_samples/Challenge-effect-2-image-3.jpg)|
+|![](/Challenge-Mirrors/Challenge-effect-2-image-3.jpg)|
 
 Solution
 ```python
@@ -226,7 +226,7 @@ Solution
 | **Mirror 3** |
 | :------------------: |
 |![](/Challenge-Mirrors/Challenge-effect-3-image-1.jpg)|
-|![](/output_samples/Challenge-effect-3-image-3.jpg)|
+|![](/Challenge-Mirrors/Challenge-effect-3-image-3.jpg)|
 
 Solution
 ```python
@@ -236,7 +236,7 @@ Solution
 | **Mirror 4** |
 | :------------------: |
 |![](/Challenge-Mirrors/Challenge-effect-4-image-1.jpg)|
-|![](/output_samples/Challenge-effect-4-image-3.jpg)|
+|![](/Challenge-Mirrors/Challenge-effect-4-image-3.jpg)|
 
 Solution
 ```python
@@ -246,7 +246,7 @@ Solution
 | **Mirror 5** |
 | :------------------: |
 |![](/Challenge-Mirrors/Challenge-effect-5-image-1.jpg)|
-|![](/output_samples/Challenge-effect-5-image-3.jpg)|
+|![](/Challenge-Mirrors/Challenge-effect-5-image-3.jpg)|
 
 Solution
 ```python
@@ -256,7 +256,7 @@ Solution
 | **Mirror 6** |
 | :------------------: |
 |![](/Challenge-Mirrors/Challenge-effect-6-image-1.jpg)|
-|![](/output_samples/Challenge-effect-6-image-3.jpg)|
+|![](/Challenge-Mirrors/Challenge-effect-6-image-3.jpg)|
 
 Solution
 ```python
