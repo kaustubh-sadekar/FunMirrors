@@ -123,37 +123,23 @@ python3 Example1.py`
 ```
 
 ## Creating your own mirrors
-Creating your own mirrors and have some fun effects is very easy using the vcam module. Refer [Example1.py](Example1.py) to get a better idea of writing the full code. You need to create your own class defining your mirror. This class should inherit the `meshGen` class from vcam module. Here is a simple example where I am trying to generate a surface with a sine wave effect. 
-I want my Z coorinate of the mirror surface to vary in form of a sine function on x, hence I want z = epsilon*sin(Kx).
+Creating your own mirrors and generating some fun effects is very easy using the vcam module. Refer [Example1.py](Example1.py) to get a better idea of writing the full code. Creating your own mirror has three major steps:
 
-* Define the function Z = F(x,y) or F(x) or F(y) in self.defineMirror method.
-* Pass the same parameters to getter method `getMirror` and call the `defineMirror` method to apply the change.
-* Store the mesh returned by the `getMirror` method and pass it the the defined virtual camera.
+* Create the virtual camera object and surface object.
+* Change the value of plane.Z using some function of X and Y.
+* Project the plane in virtual camera.
+* Get mappings using the projected points and apply mesh based warping.
 
+In Example1.py We generate a mirror where for each 3D point, its Z coordinate is defined as 
 ```python
-class myMirror(meshGen):
-
-	def __init__(self,H,W):
-		super(myMirror, self).__init__(H,W)
-
-	def defineMirror(self,epsilon):
-
-		self.Z += epsilon*np.sin((self.X/self.W)*2*np.pi*10)
-
-	def getMirror(self,epsilon):
-		self.defineMirror(epsilon)
-
-		return self.getPlane()
-
-# Creating the mirror object
-mirror = myMirror(H,W)
-# Getting the mirror surface
-src = mirror.getMirror(5)
+# Z = 20*exp^[(x/w)^2 / (2*0.1*sqrt(2*pi))]
+plane.Z += 20*np.exp(-0.5*((plane.X*1.0/plane.W)/0.1)**2)/(0.1*np.sqrt(2*np.pi))
 ```
 
-**output**
-<p align="center">
- <img src="/gifs/mirror5.gif">
-</p>
+To create your own mirror simply define a new relation Z = F(X,Y) and update plane.Z with its respective equations replacing the above line of code. Some more examples are shared so you can create your own funny mirrors and also try to create the challenge mirrors.
+
+
+
+
 
 
