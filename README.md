@@ -8,6 +8,7 @@
 * Theory
 * Installation and Usage
 * Creating your own mirrors
+* Challenge mirrors
 
 ## About the project
 I developed this fun project as an application of the following concepts:
@@ -138,7 +139,65 @@ plane.Z += 20*np.exp(-0.5*((plane.X*1.0/plane.W)/0.1)**2)/(0.1*np.sqrt(2*np.pi))
 
 To create your own mirror simply define a new relation Z = F(X,Y) and update plane.Z with its respective equations replacing the above line of code. Some more examples are shared so you can create your own funny mirrors and also try to create the challenge mirrors.
 
+#### mirror 1
+```python3
+# Z = 20*exp^[(y/h)^2 / (2*0.1*sqrt(2*pi))]
+plane.Z += 20*np.exp(-0.5*((plane.Y*1.0/plane.H)/0.1)**2)/(0.1*np.sqrt(2*np.pi))
+```
+| Effect of the mirror |
+| :------------------: |
+|![](/output_samples/Mirror-effect-2-image-1.jpg)|
+|![](/output_samples/Mirror-effect-2-image-3.jpg)|
 
+#### mirror 2
+```python3
+# Z = -10*exp^[(x/w)^2 / (2*0.1*sqrt(2*pi))]
+plane.Z -= 10*np.exp(-0.5*((plane.X*1.0/plane.W)/0.1)**2)/(0.1*np.sqrt(2*np.pi))
+```
+| Effect of the mirror |
+| :------------------: |
+|![](/output_samples/Mirror-effect-3-image-1.jpg)|
+|![](/output_samples/Mirror-effect-3-image-3.jpg)|
+
+#### mirror 3
+```python3
+# Z = -10*exp^[(y/h)^2 / (2*0.1*sqrt(2*pi))]
+plane.Z -= 10*np.exp(-0.5*((plane.Y*1.0/plane.W)/0.1)**2)/(0.1*np.sqrt(2*np.pi))
+```
+| Effect of the mirror |
+| :------------------: |
+|![](/output_samples/Mirror-effect-4-image-1.jpg)|
+|![](/output_samples/Mirror-effect-4-image-3.jpg)|
+
+#### mirror 4
+```python3
+# Z = 20*[sin(2pi(x/w - 1/4)) + sin(2pi(y/ - 1/4))]
+plane.Z += 20*np.sin(2*np.pi*((plane.X-plane.W/4.0)/plane.W)) + 20*np.sin(2*np.pi*((plane.Y-plane.H/4.0)/plane.H))
+```
+| Effect of the mirror |
+| :------------------: |
+|![](/output_samples/Mirror-effect-5-image-1.jpg)|
+|![](/output_samples/Mirror-effect-5-image-3.jpg)|
+
+#### mirror 5
+```python3
+# Z = -20*[sin(2pi(x/w - 1/4)) + sin(2pi(y/ - 1/4))]
+plane.Z -= 20*np.sin(2*np.pi*((plane.X-plane.W/4.0)/plane.W)) - 20*np.sin(2*np.pi*((plane.Y-plane.H/4.0)/plane.H))
+```
+| Effect of the mirror |
+| :------------------: |
+|![](/output_samples/Mirror-effect-6-image-1.jpg)|
+|![](/output_samples/Mirror-effect-6-image-3.jpg)|
+
+#### mirror 6
+```python3
+# Z = -100*sqrt[(x/w)^2 + (y/h)^2]
+plane.Z -= 100*np.sqrt((plane.X*1.0/plane.W)**2+(plane.Y*1.0/plane.H)**2)
+```
+| Effect of the mirror |
+| :------------------: |
+|![](/output_samples/Mirror-effect-8-image-1.jpg)|
+|![](/output_samples/Mirror-effect-8-image-3.jpg)|
 
 
 
