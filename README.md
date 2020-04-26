@@ -222,7 +222,7 @@ Solution
 
 Solution
 ```python
-#Update your solution here
+# Update your solution here
 ```
 
 | **Mirror 3** |
@@ -232,7 +232,7 @@ Solution
 
 Solution
 ```python
-#Update your solution here
+# Update your solution here
 ```
 
 | **Mirror 4** |
@@ -242,7 +242,7 @@ Solution
 
 Solution
 ```python
-#Update your solution here
+# Update your solution here
 ```
 
 | **Mirror 5** |
@@ -252,7 +252,7 @@ Solution
 
 Solution
 ```python
-#Update your solution here
+# Update your solution here
 ```
 
 | **Mirror 6** |
@@ -262,7 +262,7 @@ Solution
 
 Solution
 ```python
-#Update your solution here
+# Update your solution here
 ```
 
 
