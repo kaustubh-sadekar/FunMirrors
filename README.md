@@ -18,7 +18,7 @@ I developed this fun project as an application of the following concepts:
 * Image remapping
 
 Main objective of this project is to explain above mentioned fundamental concepts in an interesting and fun way. 
-A detailed explaination the above fundamental concepts can be found at [this blog from learnopencv.com](https://www.learnopencv.com/geometry-of-image-formation/)
+A detailed explaination of the above fundamental concepts can be found at [this blog from learnopencv.com](https://www.learnopencv.com/geometry-of-image-formation/). The opportuinity to sit through the CS763: Computer Vision Spring 2020 course at IIT Bombay also helped me to clear my fundamental concepts related to the geometry of image formation and camera projection matrix.
 
 I will explain the basics of above topics first and then I will explain how I combined all the concepts together.Before that let's have a look at some fun results!!
 
