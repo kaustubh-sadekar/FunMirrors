@@ -18,7 +18,7 @@ I developed this fun project as an application of the following concepts:
 * Image remapping
 
 Main objective of this project is to explain above mentioned fundamental concepts in an interesting and fun way. 
-A detailed explaination of the above fundamental concepts can be found at [this blog from learnopencv.com](https://www.learnopencv.com/geometry-of-image-formation/). The opportuinity to sit through the CS763: Computer Vision Spring 2020 course at IIT Bombay also helped me to clear my fundamental concepts related to the geometry of image formation and camera projection matrix.
+A detailed explaination of the above fundamental concepts can be found at [this blog from learnopencv.com](https://www.learnopencv.com/geometry-of-image-formation/). The opportuinity to sit through the CS763: Computer Vision Spring 2020 course at IIT Bombay also helped me to clear my fundamental concepts related to the geometry of image formation and camera projection matrix. These topics are an essential part of this project.
 
 I will explain the basics of above topics first and then I will explain how I combined all the concepts together.Before that let's have a look at some fun results!!
 
@@ -72,7 +72,7 @@ External camera properties that are dependent on the camera pose.
 * Camera rotation (rotation of camera in the 3D world along all the three axis)
 * Camera translation (translation of camera in the 3D world)
 
-Derivation of the camera projection matrix is explained in the following image.
+Derivation of the camera projection matrix is explained in the following image of my lecture noted which I took while attening the CS763: Computer Vision Spring 2020 course at IIT Bombay.
 <p align="left">
   <img width="850" src="/theory1.jpg">
 </p>
