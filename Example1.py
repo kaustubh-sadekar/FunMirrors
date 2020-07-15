@@ -14,10 +14,10 @@ c1 = vcam(H=H,W=W)
 plane = meshGen(H,W)
 
 # We generate a mirror where for each 3D point, its Z coordinate is defined as Z = 20*exp^((x/w)^2 / 2*0.1*sqrt(2*pi))
-
 plane.Z += 20*np.exp(-0.5*((plane.X*1.0/plane.W)/0.1)**2)/(0.1*np.sqrt(2*np.pi))
 pts3d = plane.getPlane()
 
+# Projecting / capturing the 3D points using the virtual camera
 pts2d = c1.project(pts3d)
 map_x,map_y = c1.getMaps(pts2d)
 
