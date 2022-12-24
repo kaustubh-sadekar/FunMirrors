@@ -65,6 +65,7 @@ External camera properties that are dependent on the camera pose.
 * Camera translation (translation of camera in the 3D world)
 
 Derivation of the camera projection matrix is explained in the following image of my lecture notes which I took while attening the CS763 course.
+
 <p align="center">
   <img width="850" src="/theory1.jpg">
 </p>
