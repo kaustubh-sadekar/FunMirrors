@@ -85,13 +85,6 @@ Mirror using a gaussian function           |  Projection of the grid in virtual 
 :-------------------------:|:-------------------------:
 ![](/Mirror1.png)  |  ![](/mesh_projection.png) 
 
-<p align='center'>
-  <img src='Mirror1.png' width=800>
-</p>
-
-<p align='center'>
-  <img src='mesh_projection.png' width=800>
-</p>
 
 ### Image remapping
 In image remapping we basically try to change the pixel location. Using mappings U and V we get the new location of x and y coordinates for a given pixel, originally at (x,y) location. Thus we get x_new = U(x,y) and y_new = V(x,y). OpenCV provides a very easy to use method, `remap`. We need to pass the image, and the x and y map i.e. U and V respectively in the above definition. The function basically returns output such that the pixel values at (x,y) in the original image are mapped to (x_new,y_new). This is called forward mapping. To avoid holes we find the inverse mapping such that (x,y) in the original image is determined as `x,y = U_inv(x_new,y_new) , V_inv(x_new,y_new)`.
