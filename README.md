@@ -71,7 +71,8 @@ Derivation of the camera projection matrix is explained in the following image o
 
 
 ### Creating mirror surfaces using numpy
-I have used np.meshgrid to create the entire plane surface in 3D. Some of the planes used are shown below
+I have used np.meshgrid to create the entire plane surface in 3D. Some of the planes used are shown below.
+
 Mirror using a gaussian function           |  Inverted mirror using an inverted gaussian function  
 :-------------------------:|:-------------------------:
 ![](/Mirror1.png)  |  ![](/Mirror2.png) 
