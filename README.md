@@ -2,15 +2,7 @@
  <img height=300 src="FunMirrorsLogo.png">
 </p>
 
-## Content
-* About the project
-* Fun results
-* Theory
-* Installation and Usage
-* Creating your own mirrors
-* Challenge mirrors
-
-## About the project
+## Project in brief
 I developed this fun project as an application of the following concepts:
 
 * Camera projection matrix
@@ -24,28 +16,28 @@ I will explain the basics of above topics first and then I will explain how I co
 
 ## Fun Results
 <p align="center">
- <img src="/gifs/M3b.gif">
+ <img src="gifs/M3b.gif">
 </p>
 <p align="center">
  Input and output of Babyfy mirror
 </p>
 
 <p align="center">
- <img src="/gifs/M1a.gif">
+ <img src="gifs/M1a.gif">
 </p>
 <p align="center">
  Input and output of HulkMode mirror
 </p>
 
 <p align="center">
- <img src="/gifs/M2a.gif">
+ <img src="gifs/M2a.gif">
 </p>
 <p align="center">
  Input and output of Squeezoo mirror
 </p>
 
 <p align="center">
- <img src="/gifs/M4b.gif">
+ <img src="gifs/M4b.gif">
 </p>
 <p align="center">
  Input and output of Strectchee mirror
@@ -72,19 +64,24 @@ External camera properties that are dependent on the camera pose.
 * Camera rotation (rotation of camera in the 3D world along all the three axis)
 * Camera translation (translation of camera in the 3D world)
 
-Derivation of the camera projection matrix is explained in the following image of my lecture noted which I took while attening the CS763 course.
-<p align="left">
+Derivation of the camera projection matrix is explained in the following image of my lecture notes which I took while attening the CS763 course.
+<p align="center">
   <img width="850" src="/theory1.jpg">
 </p>
-<p align="left">
+<p align="center">
   <img width="550" src="/theory2.png">
 </p>
 
 ### Creating mirror surfaces using numpy
 I have used np.meshgrid to create the entire plane surface in 3D. Some of the planes used are shown below
 Mirror using a gaussian function           |  Inverted mirror using an inverted gaussian function  
-:-------------------------:|:-------------------------:
-![](/Mirror1.png)  |  ![](/Mirror2.png)
+
+<p align='center'>
+  <img src='Mirror1.png' width=800>
+</p>
+<p align='center'>
+  <img src='Mirror2.png' width=800>
+</p>
 
 ### Projecting these surfaces using the camera projection matrix
 Now as explained in the camera projection matrix section we can use the projection matrix to project any 3D point in the image. Using numpy functions and concepts of matrix multiplication we apply the projection matrix to the entire 3D surface. 
@@ -93,6 +90,13 @@ Mirror using a gaussian function           |  Projection of the grid in virtual 
 :-------------------------:|:-------------------------:
 ![](/Mirror1.png)  |  ![](/mesh_projection.png) 
 
+<p align='center'>
+  <img src='Mirror1.png' width=800>
+</p>
+
+<p align='center'>
+  <img src='mesh_projection.png' width=800>
+</p>
 
 ### Image remapping
 In image remapping we basically try to change the pixel location. Using mappings U and V we get the new location of x and y coordinates for a given pixel, originally at (x,y) location. Thus we get x_new = U(x,y) and y_new = V(x,y). OpenCV provides a very easy to use method, `remap`. We need to pass the image, and the x and y map i.e. U and V respectively in the above definition. The function basically returns output such that the pixel values at (x,y) in the original image are mapped to (x_new,y_new). This is called forward mapping. To avoid holes we find the inverse mapping such that (x,y) in the original image is determined as `x,y = U_inv(x_new,y_new) , V_inv(x_new,y_new)`.
