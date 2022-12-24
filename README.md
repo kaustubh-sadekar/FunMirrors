@@ -66,12 +66,9 @@ External camera properties that are dependent on the camera pose.
 
 Derivation of the camera projection matrix is explained in the following image of my lecture notes which I took while attening the CS763 course.
 
-<p align="center">
-  <img width="850" src="/theory1.jpg">
-</p>
-<p align="center">
-  <img width="550" src="/theory2.png">
-</p>
+![](/theory1.jpg) 
+![](/theory2.png) 
+
 
 ### Creating mirror surfaces using numpy
 I have used np.meshgrid to create the entire plane surface in 3D. Some of the planes used are shown below
